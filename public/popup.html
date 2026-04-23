@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>μDeep Blocker</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1>μDeep Blocker</h1>
+                <span class="subtitle">AI-Powered Protection</span>
+            </div>
+            <div class="status-indicator" id="aiStatus">
+                <div class="status-dot" id="statusDot"></div>
+                <span id="statusText">Loading...</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="stats-section">
+                <h2>Protection Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="blockedCount">0</div>
+                        <div class="stat-label">Blocked Requests</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalCount">0</div>
+                        <div class="stat-label">Total Analyzed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="blockRate">0%</div>
+                        <div class="stat-label">Block Rate</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="models-section">
+                <h2>AI Models Status</h2>
+                <div class="model-status">
+                    <div class="model-item">
+                        <span class="model-name">Qwen3-Embedding</span>
+                        <span class="model-status" id="embeddingStatus">Loading...</span>
+                    </div>
+                    <div class="model-item">
+                        <span class="model-name">Classifier</span>
+                        <span class="model-status" id="classifierStatus">Loading...</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="settings-section">
+                <h2>Settings</h2>
+                <div class="setting-item">
+                    <label for="threshold">Block Threshold</label>
+                    <div class="threshold-control">
+                        <input type="range" id="threshold" min="0.1" max="1.0" step="0.05" value="0.65">
+                        <span id="thresholdValue">0.65</span>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="enableNotifications" checked>
+                        Enable notifications
+                    </label>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <button id="refreshBtn" class="btn btn-primary">Refresh Stats</button>
+            <button id="settingsBtn" class="btn btn-secondary">Advanced Settings</button>
+        </footer>
+    </div>
+
+    <script type="module" src="../src/popup/popup.ts"></script>
+</body>
+</html>
