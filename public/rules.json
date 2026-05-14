@@ -1,0 +1,11 @@
+[
+  {
+    "id": "block_trackers",
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||example.com^",
+      "resourceTypes": ["script", "image", "xmlhttprequest"]
+    }
+  }
+]
